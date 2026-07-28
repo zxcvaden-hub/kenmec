@@ -45,7 +45,7 @@
 
 Apps Script Web App：
 
-https://script.google.com/macros/s/AKfycbzmlpQFdZUh4wZNXDxQFoHeifS1dp0MgKQPDPHFRR8htWUn34hXwymWyb2GKiY_o97y8Q/exec
+https://script.google.com/macros/s/AKfycbwpjEj9H3ppetFspEeaVLVX3m3ddbkhVFN831JZ2sWTtoP2Iv6fOr2IN6tMCRu00R2XCQ/exec
 
 專案內參考程式：`google-apps-script.gs`（需貼至 Google Apps Script 編輯器；修改後請重新部署新版本）。
 
