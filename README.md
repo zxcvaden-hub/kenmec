@@ -24,6 +24,35 @@
 - 點「交通方式」可顯示捷運／公車／停車場卡片與一鍵導航
 - 純靜態運作，不呼叫 OpenAI、不需資料庫
 
+## 匿名提問紀錄
+
+本客服可將匿名提問紀錄送至 Google Apps Script，並寫入 Google Sheets。
+
+紀錄欄位包括：
+
+- 時間
+- 匿名 Session ID
+- 使用者問題
+- 命中的 FAQ ID
+- FAQ 問題
+- 是否找到答案
+- 是否 Fallback
+- 來源
+- 裝置類型
+- 客服版本
+
+本功能不主動蒐集姓名、員工編號、電話、Email 或 IP。
+
+Apps Script Web App：
+
+https://script.google.com/macros/s/AKfycbzmlpQFdZUh4wZNXDxQFoHeifS1dp0MgKQPDPHFRR8htWUn34hXwymWyb2GKiY_o97y8Q/exec
+
+專案內參考程式：`google-apps-script.gs`（需貼至 Google Apps Script 編輯器；修改後請重新部署新版本）。
+
+注意：
+
+不要把 Google 試算表設為任何人可公開編輯。
+
 ## 必傳檔案（上傳至 kenmec 根目錄）
 
 ```
