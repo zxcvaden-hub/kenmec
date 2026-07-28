@@ -1,36 +1,30 @@
-# 廣運50週年慶智能客服
+# 廣運50週年慶智能客服正式版
 
-靜態 FAQ 客服（GitHub Pages，無需後端）。知識庫版本：**0728**｜FAQ：**39** 則。
+廣運 50 週年家庭日活動 **智能客服正式版**（靜態網站，部署於 GitHub Pages，無需後端）。
 
-> **請先確認要開哪一個站：**  
-> - **正式版**給活動對外／正式使用  
-> - **測試版**給內部預覽與驗證，請勿當成正式對外網址
+## 正式資訊
 
----
+| 項目 | 內容 |
+|------|------|
+| 專案名稱 | 廣運50週年慶智能客服正式版 |
+| 正式 repo | `zxcvaden-hub/kenmec` |
+| 智能客服 | https://zxcvaden-hub.github.io/kenmec/ |
+| QR Code | https://zxcvaden-hub.github.io/kenmec/qr.html |
+| 知識庫版本 | **0728** |
+| FAQ 數量 | **39** 則 |
 
-## 正式版 vs 測試版（請勿混淆）
+> **正式版只使用 kenmec 網址。**
 
-| 項目 | 正式版 | 測試版 |
-|------|--------|--------|
-| 用途 | 活動正式對外 | 內部測試／預覽 |
-| GitHub repo | [`zxcvaden-hub/kenmec`](https://github.com/zxcvaden-hub/kenmec) | [`zxcvaden-hub/legoworks`](https://github.com/zxcvaden-hub/legoworks) |
-| 智能客服 | https://zxcvaden-hub.github.io/kenmec/ | https://zxcvaden-hub.github.io/legoworks/ |
-| QR Code | https://zxcvaden-hub.github.io/kenmec/qr.html | https://zxcvaden-hub.github.io/legoworks/qr.html |
-| 時光探險 | 依 kenmec 現場部署為準 | https://zxcvaden-hub.github.io/legoworks/time-adventure/ |
-| 專屬說明 | [`README-正式版-kenmec.md`](./README-正式版-kenmec.md) | [`README-測試版-legoworks.md`](./README-測試版-legoworks.md) |
+詳細說明亦可見：[`README-正式版-kenmec.md`](./README-正式版-kenmec.md)
 
-上傳步驟見：[`README-上傳說明.md`](./README-上傳說明.md)
+## 功能簡介
 
----
+- 依關鍵字自動回答活動 FAQ（報到、交通、餐飲、闖關、摸彩等）
+- 正式首頁快捷按鈕為 6 個：交通方式、活動流程 Rundown、如何報到、餐飲安排、參加禮與闖關禮、聯絡福利委員會
+- 點「交通方式」可顯示捷運／公車／停車場卡片與一鍵導航
+- 純靜態運作，不呼叫 OpenAI、不需資料庫
 
-## 客服重點（0728）
-
-- 報到：出勤／榮譽假 **09:00 前** QR Code 報到；**09:30** 開放入場；**10:00 前** 就座
-- 正常報到只需個人 QR；員工證僅供異常核對
-- 活動當天不需公司上下班打卡；進場／離場仍須活動 QR 報到及簽退
-- 快捷 6 鈕：交通方式、活動流程 Rundown、如何報到、餐飲安排、參加禮與闖關禮、聯絡福利委員會
-
-## 必傳客服檔案
+## 必傳檔案（上傳至 kenmec 根目錄）
 
 ```
 ├── index.html
@@ -40,10 +34,31 @@
 └── messageImage_1779701547098.jpg
 ```
 
-上傳時**不要刪除或覆蓋**目標 repo 既有的 `time-adventure/`（若存在）。
+> 上傳客服檔案時，**不要刪除或覆蓋正式站既有的 `time-adventure/` 資料夾。**
 
-## 本機維護
+## 上傳步驟
 
-1. 編輯 `data/knowledge.json`
-2. 同步到 `index.html` 內嵌 KNOWLEDGE（`node inject-knowledge.js`）
-3. 確認 `knowledge.json` 與 `index.html` 一致後，再分別上傳正式版／測試版
+1. 開啟 GitHub repo：**`zxcvaden-hub/kenmec`**
+2. 將上述客服檔案上傳至 repo 根目錄（覆蓋同名檔）
+3. **保留**既有 `time-adventure/`（若存在）
+4. Commit 後以無痕視窗測試：https://zxcvaden-hub.github.io/kenmec/?v=0728
+
+上傳細節見：[`README-上傳說明.md`](./README-上傳說明.md)
+
+## 維護方式（本機）
+
+1. 編輯 FAQ：`data/knowledge.json`（若有）或根目錄 `knowledge.json`
+2. 同步：確保 `index.html` 內嵌 `const KNOWLEDGE` 與 `knowledge.json` 完全一致
+3. 確認後再上傳至 **kenmec**
+
+## 活動重點（2026/8/15）
+
+- 地點：國立臺灣大學綜合體育館
+- 報到：出勤／榮譽假請於 **09:00 前** 完成個人 QR Code 報到；一般活動 **09:30** 開放入場；請於 **10:00 前** 完成入場並就座
+- 報到處：三樓（即救護站）
+- 五十週年紀念禮：保溫瓶（員工限定、全程參加），活動現場不發放，結束後回廠發放
+- 現場問題：廣運福利委員會、三樓服務台
+
+## 授權與用途
+
+本專案為廣運 50 週年慶活動內部使用。活動相關文案請以主辦單位公告為準。

@@ -1,0 +1,34 @@
+{
+  "packName": "0728正式廣運客服上線版本",
+  "knowledgeVersion": "0728",
+  "faqCount": 39,
+  "updatedAt": "2026-07-28",
+  "purpose": "廣運50週年慶智能客服正式版打包，不含 time-adventure",
+  "deployed": {
+    "production": {
+      "repo": "zxcvaden-hub/kenmec",
+      "url": "https://zxcvaden-hub.github.io/kenmec/",
+      "qr": "https://zxcvaden-hub.github.io/kenmec/qr.html"
+    }
+  },
+  "files": [
+    "index.html",
+    "knowledge.json",
+    "data/knowledge.json",
+    "qr.html",
+    "qrcode.min.js",
+    "messageImage_1779701547098.jpg",
+    "README.md",
+    "README-上傳說明.md",
+    "README-正式版-kenmec.md",
+    "MANIFEST.json",
+    "檢查清單-給其他AI.md",
+    "PACK-VERIFY.txt"
+  ],
+  "syncRules": [
+    "knowledge.json 必須等於 index.html 內嵌 const KNOWLEDGE",
+    "quickReplies 必須為正式 6 鈕",
+    "fallback 必須為固定專人協助文案",
+    "不含 time-adventure，且上傳時不得覆蓋正式站既有 time-adventure 資料夾"
+  ]
+}
