@@ -1,42 +1,86 @@
-# 廣運上線版 · GitHub Pages 上傳包
+# 0728 智能客服｜雙站上傳說明
 
-此資料夾內**所有檔案**請上傳到新 GitHub 儲存庫的**根目錄**（不要放進子資料夾）。
+知識庫版本：**0728**｜FAQ：**39** 則
 
-## 必傳檔案（5 個）
+本說明同時涵蓋：
 
-| 檔案 | 用途 |
-|------|------|
-| index.html | **智能客服主頁**（含樣式、FAQ、快捷按鈕、交通卡片） |
-| messageImage_1779701547098.jpg | 客服頭像圖（與 index.html 同層） |
-| qr.html | QR Code 頁（掃碼進客服） |
-| qrcode.min.js | QR 頁所需程式 |
-| knowledge.json | 知識庫備份（選填但建議一併上傳，方便日後對照） |
+1. **正式版** → `zxcvaden-hub/kenmec`
+2. **測試版** → `zxcvaden-hub/legoworks`
 
-## 上傳步驟
+請依目標站別上傳，**不要把正式／測試網址搞反**。
 
-1. 開啟你的 GitHub 新 repo 頁面  
-2. **Add file** → **Upload files**  
-3. 將本資料夾內 **5 個檔案** 全部拖入（含 jpg）  
-4. Commit message 例：`deploy guangyun chatbot`  
-5. 到 repo **Settings** → **Pages** → Source 選 **Deploy from branch** → 分支 **main**（或 master）→ 資料夾 **/ (root)** → Save  
-6. 等 1～3 分鐘，網址通常為：  
-   `https://你的帳號.github.io/你的repo名稱/`
+---
 
-## 上傳後測試
+## 一、站別對照（先看這張表）
 
-- 客服首頁：`https://你的帳號.github.io/repo名稱/?v=1`  
-- QR 頁：`https://你的帳號.github.io/repo名稱/qr.html`  
-- 點快捷 **「交通方式」** → 應出現三欄交通卡片  
-- 點 **「廣運50週年紀念品與闖關禮」** → 應寫入場報到 QR 領取  
+| | 正式版 | 測試版 |
+|--|--------|--------|
+| Repo | `zxcvaden-hub/kenmec` | `zxcvaden-hub/legoworks` |
+| 客服 | https://zxcvaden-hub.github.io/kenmec/ | https://zxcvaden-hub.github.io/legoworks/ |
+| QR | https://zxcvaden-hub.github.io/kenmec/qr.html | https://zxcvaden-hub.github.io/legoworks/qr.html |
+| 說明檔 | [`README-正式版-kenmec.md`](./README-正式版-kenmec.md) | [`README-測試版-legoworks.md`](./README-測試版-legoworks.md) |
+| 對外使用 | ✅ 正式對外 | ❌ 僅內部測試 |
 
-## 勿上傳這些（會搞錯版面）
+總覽：[`README.md`](./README.md)
 
-- `public/index.html`（舊版，樣式會壞）  
-- 整個 `public/` 資料夾  
-- `server.js`、`.env`（本機用，上線不需要）
+---
 
-## 重新打包
+## 二、必傳客服檔案（兩站相同）
 
-在 chatbot2 專案執行：`node pack-guangyun-deploy.js`
+從本機專案複製到**目標 repo 根目錄**（覆蓋同名檔）：
 
-產生時間：2026/5/28 下午2:14:50
+```
+├── index.html
+├── knowledge.json
+├── qr.html
+├── qrcode.min.js
+├── messageImage_1779701547098.jpg
+├── README.md
+├── README-正式版-kenmec.md
+├── README-測試版-legoworks.md
+└── README-上傳說明.md
+```
+
+### 重要提醒
+
+- **不要刪除或覆蓋既有 `time-adventure/` 資料夾**（legoworks 測試站尤其重要）。
+- 客服內容兩邊可同步；**對外連結請用 kenmec**。
+
+---
+
+## 三、上傳正式版（kenmec）
+
+1. 開啟本機 `kenmec` repo
+2. 複製上述客服／README 檔到根目錄
+3. 確認未誤刪其他正式檔
+4. Commit 建議：`deploy 0728 正式客服（與測試站同步）`
+5. Push 後無痕測試：
+   - https://zxcvaden-hub.github.io/kenmec/?v=0728
+   - https://zxcvaden-hub.github.io/kenmec/qr.html?v=0728
+
+---
+
+## 四、上傳測試版（legoworks）
+
+1. 開啟本機 `legoworks` repo
+2. 複製上述客服／README 檔到根目錄
+3. **確認 `time-adventure/` 仍在**
+4. Commit 建議：`deploy 0728 測試客服（與正式站同步）`
+5. Push 後無痕測試：
+   - https://zxcvaden-hub.github.io/legoworks/?v=0728
+   - https://zxcvaden-hub.github.io/legoworks/qr.html?v=0728
+   - https://zxcvaden-hub.github.io/legoworks/time-adventure/
+
+---
+
+## 五、上傳後檢查清單（兩站共用）
+
+- [ ] 副標不出現「大量使用版」
+- [ ] 快捷 6 鈕：交通方式、活動流程 Rundown、如何報到、餐飲安排、參加禮與闖關禮、聯絡福利委員會
+- [ ] 「活動幾點報到」→ 09:00／09:30／10:00 三分段
+- [ ] 「要帶員工證嗎」→ 正常報到只需 QR
+- [ ] 「要打上下班卡嗎」→ 不需公司打卡，仍須活動 QR 報到及簽退
+- [ ] 「9 點前排隊」→ 現場確認後可視為準時（不限遊覽車）
+- [ ] 「有清真餐嗎」→ 無豬肉餐 ≠ 清真認證
+- [ ] 找不到答案 → 固定導向福利委員會／三樓服務台
+- [ ] 測試站：`time-adventure/` 仍可開啟
