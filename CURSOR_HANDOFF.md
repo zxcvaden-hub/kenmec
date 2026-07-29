@@ -7,7 +7,7 @@
 - 讓活動來賓用手機查詢活動資訊，減少服務台重複回覆。
 - 正式版採 **GitHub Pages 靜態頁**（kenmec）。
 
-## 公開網址（2026-07-28 狀態）
+## 公開網址（2026-07-29 狀態）
 
 | 用途 | 網址 |
 |------|------|
@@ -17,13 +17,17 @@
 | 測試 QR | https://zxcvaden-hub.github.io/legoworks/qr.html |
 | 時光探險（測試站） | https://zxcvaden-hub.github.io/legoworks/time-adventure/ |
 
-正式 repo：`zxcvaden-hub/kenmec`  
-測試 repo：`zxcvaden-hub/legoworks`
+現場避快取請加：`?v=20260729d`
+
+正式 repo：`zxcvaden-hub/kenmec`（目前 `f0f4c7e`）  
+測試 repo：`zxcvaden-hub/legoworks`（目前 `a892304`）
 
 ~~舊網址（已停用）~~：`https://vydyyau-lab.github.io/shuai/`
 
 ## 重要檔案
 
+- **`LEADME.md`**：給 AI／接手者的導讀（先讀我）
+- `PROGRESS_SNAPSHOT.md`：目前最新進度存檔（2026-07-29 下午）
 - `index.html`：正式客服 UI（內嵌 KNOWLEDGE + 匿名提問紀錄）
 - `knowledge.json` / `data/knowledge.json`：知識庫（須與內嵌同步）
 - `qr.html` / `qrcode.min.js`：QR 頁
@@ -72,23 +76,24 @@ py -m http.server 3780
 
 或直接開啟根目錄 `index.html`。
 
-## 進度檢查點（2026-07-28 晚間儲存）
+## 進度檢查點（2026-07-29 下午儲存）
 
-### 時光探險（暫存，可稍後接續）
-- 詳見 **`PROGRESS_SNAPSHOT.md`**（2026-07-28 晚間時光探險暫存點）
-- 本機：`time-adventure/`（`puzzles.json` 編輯 → `py scripts/split-time-adventure.py`）
-- 線上 LEGOWORKS 已同步：`dc33c59`（本機與 `_legoworks-upload/time-adventure` DIFF=0）
-- 重點：第 3 關密語「立足台灣，布局全球」；擦拭一半即可作答；3-2-1／倒數音效；過關引導掃下一關；活動說明頁定稿三段文案
-- 活動客服連結指向 kenmec 正式 FAQ
+詳見 **`PROGRESS_SNAPSHOT.md`**（目前最新存檔）。
 
-### 正式版客服（可另開對話接續）
-- 正式／測試客服內容以根目錄＋`0728正式廣運客服上線版本/` 為準
-- 知識庫：`data/knowledge.json`（`_meta.knowledgeVersion`：**0728**，FAQ **39**）
-- 正式 repo：`zxcvaden-hub/kenmec`；本機 clone：`_kenmec-upload/`
-- 測試 repo：`zxcvaden-hub/legoworks`；本機 clone：`_legoworks-upload/`
-- 本機 `chatbot2` **不是** git repo；上傳用上述 clone
+### 時光探險
+- 本機：`time-adventure/`（`puzzles.json` → `py scripts/split-time-adventure.py`）
+- 線上 LEGOWORKS：`a892304`；`ASSET_VERSION=20260729d`
+- 已上：cache bust、LINE 外開提示、BGM 懶載、第 2 關「50年」文案、第 4 關點選 UX
+- 桌面：`廣運時光探險_20260729-3.zip`＋關主密語速查卡
+
+### 正式版客服
+- 知識庫：`data/knowledge.json`（**0728**，FAQ **39**）
+- 正式 kenmec：`f0f4c7e`（LINE 提示＋頭像 cache）
+- 上線前必跑：`py scripts/verify-chatbot-health.py`
+- 桌面：`廣運50週年智能客服_20260729-3.zip`
+- 本機 `chatbot2` **不是** git repo；上傳用 `_kenmec-upload/`、`_legoworks-upload/`
 
 ### 切換方式（給下一位／下一則對話）
-1. 時光探險先停：以 `PROGRESS_SNAPSHOT.md` 晚間暫存點為準，勿覆蓋 `time-adventure/`
-2. 正式客服：改 `data/knowledge.json` → `node inject-knowledge.js` → 上傳 kenmec
-3. 回來時光探險：打開 `PROGRESS_SNAPSHOT.md` 晚間暫存點即可接續
+1. 說：接續 `PROGRESS_SNAPSHOT.md` 的 **2026-07-29 下午**存檔點
+2. 正式客服：改 `data/knowledge.json` → inject → verify PASS → 上傳 kenmec（勿覆蓋 `time-adventure/`）
+3. 時光探險：改 `puzzles.json` → split → 同步 `_legoworks-upload` → push；記得提高 `ASSET_VERSION`

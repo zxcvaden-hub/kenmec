@@ -146,3 +146,12 @@ GitHub Pages 版的 `index.html` 會引用此檔案，因此上傳時須確保�
 - **根因**：`index.html` 內嵌 `const KNOWLEDGE` 字串換行被寫成真實換行 → `<script>` SyntaxError → `bindQuickReplies`／送出事件未執行。
 - **觸發**：`7e2bee0`（20:36）；**修復**：`d36a2d0`（23:12）。
 - **防範**：只用 `inject-knowledge.js` 或 `py scripts/inject-knowledge.py`；上線前跑 `py scripts/verify-chatbot-health.py`；禁止手貼 KNOWLEDGE。
+
+## 12. 進度儲存檢查點（2026-07-29 下午）
+
+- 詳見 `PROGRESS_SNAPSHOT.md`（目前最新）。
+- **kenmec** `f0f4c7e`：LINE 外開提示、頭像 `?v=`。
+- **legoworks** `a892304`：`ASSET_VERSION=20260729d`；cache bust、LINE 提示、BGM 懶載；第 2 關「四十多年」→「50年」。
+- 桌面包：`廣運時光探險_20260729-3.zip`、`廣運50週年智能客服_20260729-3.zip`、關主密語速查卡。
+- 其他 AI 建議採納結論：不做 SPA；做版本號／LINE 提示／紙本關主速查；`fetch(puzzles.json)` 已不適用。
+- 當日暫停於此：使用者要求「現在進度請幫我儲存設立」。

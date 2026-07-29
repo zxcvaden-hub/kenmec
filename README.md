@@ -2,16 +2,19 @@
 
 廣運 50 週年家庭日活動 **智能客服正式版**（靜態網站，部署於 GitHub Pages，無需後端）。
 
+> **先讀導覽：** [`LEADME.md`](./LEADME.md)｜進度存檔：[`PROGRESS_SNAPSHOT.md`](./PROGRESS_SNAPSHOT.md)（2026-07-29 下午）
+
 ## 正式資訊
 
 | 項目 | 內容 |
 |------|------|
 | 專案名稱 | 廣運50週年慶智能客服正式版 |
-| 正式 repo | `zxcvaden-hub/kenmec` |
+| 正式 repo | `zxcvaden-hub/kenmec`（目前 `f0f4c7e`） |
 | 智能客服 | https://zxcvaden-hub.github.io/kenmec/ |
 | QR Code | https://zxcvaden-hub.github.io/kenmec/qr.html |
 | 知識庫版本 | **0728** |
 | FAQ 數量 | **39** 則 |
+| 避快取 | `?v=20260729d` |
 
 > **正式版只使用 kenmec 網址。**
 
@@ -23,6 +26,9 @@
 - 正式首頁快捷按鈕為 6 個：交通方式、活動流程 Rundown、如何報到、餐飲安排、參加禮與闖關禮、聯絡福利委員會
 - 點「交通方式」可顯示捷運／公車／停車場卡片與一鍵導航
 - 純靜態運作，不呼叫 OpenAI、不需資料庫
+- 時光探險（獨立五關）維護說明見 [`time-adventure/README.md`](./time-adventure/README.md)
+- 測試站 LEGOWORKS 已上線 0728 UX（`stage-1`～`stage-5`；網址唯一設定在 `time-adventure/config.js`）
+- 正式站 kenmec 切換時：只改 `SITE_BASE_URL`，並重新下載正式 QR（不可沿用測試 QR）
 
 ## 匿名提問紀錄
 
